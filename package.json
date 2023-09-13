@@ -1,0 +1,25 @@
+{
+  "name": "meli-challenge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "concurrently \"npm start --prefix frontend\" \"npm start --prefix backend\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MatiasAcevedoFagundez/MeLi-Challenge.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MatiasAcevedoFagundez/MeLi-Challenge/issues"
+  },
+  "homepage": "https://github.com/MatiasAcevedoFagundez/MeLi-Challenge#readme",
+  "devDependencies": {
+    "axios": "^1.5.0",
+    "concurrently": "^8.2.1"
+  }
+}
