@@ -1,12 +1,18 @@
 import * as React from "react";
 import { Outlet } from "react-router-dom";
-import { FrameContainer } from "./FrameContainer";
+import FrameContainer from "./FrameContainer";
+import LoaderWrapper from "../LoaderWrapper";
+import Header from "../Header";
 
-export const PageFrame = () => {
+const PageFrame = () => {
   return (
     <FrameContainer>
-      {/* TODO: Aca va a ir el buscador */}
+      <Header />
+      <LoaderWrapper>
         <Outlet />
+      </LoaderWrapper>
     </FrameContainer>
   );
 };
+
+export default PageFrame;

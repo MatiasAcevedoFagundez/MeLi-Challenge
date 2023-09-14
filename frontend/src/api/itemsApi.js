@@ -1,15 +1,14 @@
-import axios from 'axios';
+import axios from "axios";
 
 const instance = axios.create({
-  baseURL: 'http://localhost:9000',
+  baseURL: "http://localhost:9000"
 });
 
-export const search = async (text) => {
+export const search = async search => {
   try {
-    const response = await instance.get(`/api/items?search=gol`);
+    const response = await instance.get(`/api/items?search=${search}`);
     return response.data;
   } catch (error) {
     throw error;
   }
 };
-
