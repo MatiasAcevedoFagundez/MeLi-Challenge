@@ -8,7 +8,7 @@ const HeaderWrapper = styled.div`
   padding: 10px 0;
 
   form {
-    margin: 0px 170px 0 85px;
+    margin: 0px 150px;
     display: flex;
   }
 `;

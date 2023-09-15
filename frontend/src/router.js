@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import PageFrame from "./components/Navigation/PageFrame";
+import SearchResult from "./pages/SearchResult";
 import * as itemsApi from "./api/itemsApi";
 
 export const router = createBrowserRouter([
@@ -15,18 +16,23 @@ export const router = createBrowserRouter([
         children: [
           {
             path: "",
-            element: <div>Search result Page</div>,
+            element: <SearchResult />,
             loader: async ({ request }) => {
               const search = new URL(request.url).searchParams.get("search");
 
               const items = await itemsApi.search(search);
-              console.log(items);
-              return { items };
+              return { searchedItems: items.data };
             }
           },
           {
             path: ":id",
-            element: <div>Detail Page</div>
+            element: <div>Detail Page</div>,
+            loader: async ({ request }) => {
+              const pathname = new URL(request.url).pathname;
+              const id = pathname.split('/').pop();
+              console.log("El valor de id es:", id);
+              return null;
+            }
           }
         ]
       }
