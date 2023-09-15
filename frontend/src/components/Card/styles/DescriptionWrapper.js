@@ -11,6 +11,9 @@ const DescriptionWrapper = styled.div`
     color: ${COLORS.textGeneral};
     font-size: 24px;
     cursor: pointer;
+    display: flex;
+    gap: 10px;
+    align-items: center;
   }
 
   label {

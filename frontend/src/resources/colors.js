@@ -4,4 +4,5 @@ export const COLORS = {
   breadcrumbsColor: "#999999",
   cardBackground: "white",
   textGeneral: "#333333",
+  buttonBlue: "#3483FA",
 };
