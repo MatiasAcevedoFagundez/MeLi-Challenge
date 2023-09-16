@@ -33,6 +33,36 @@ const mapSearchResults = data => {
   return response;
 };
 
+function mapItemDetails(itemData, descriptionData, categories) {
+  const item = {
+    id: itemData.id,
+    title: itemData.title,
+    price: {
+      currency: itemData.currency_id,
+      amount: itemData.price,
+      decimals: 0,
+    },
+    picture: itemData.thumbnail,
+    condition: itemData.condition,
+    free_shipping: itemData.shipping.free_shipping,
+    sold_quantity: itemData.sold_quantity,
+    description: descriptionData.plain_text,
+  };
+
+  const mappedItem = {
+    author: {
+      name: "Matias",
+      lastname: "Acevedo"
+    },
+    categories: categories || [],
+    item,
+  };
+
+  return mappedItem;
+}
+
+
 module.exports = {
-  mapSearchResults
+  mapSearchResults,
+  mapItemDetails
 };
